@@ -7,7 +7,27 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Layout.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Stock.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PopUpWindows\NewStock.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Layout.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Stock.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PopUpWindows\NewStock.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

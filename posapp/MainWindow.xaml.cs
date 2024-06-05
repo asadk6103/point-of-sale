@@ -40,7 +40,10 @@ namespace posapp
             else if (username != null &&  password != null)
             {
                 (int code, string message, User user) = UserController.GetLoggedIn(username, password);
-                Console.WriteLine(message);
+                if (code == 200)
+                {
+
+                }
             }
         }
     }

@@ -1,0 +1,54 @@
+﻿<Window x:Class="posapp.Layout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:posapp"
+        mc:Ignorable="d"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        WindowStyle="None"
+        Title="Layout" Height="450" Width="800">
+    <Border>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="18*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Column="0" Background="#005ECE">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0 20">
+                        <TextBlock Text="POS" FontSize="32" FontFamily="Poppins" FontWeight="Bold" TextAlignment="Center" Foreground="#fff" />
+                    </Border>
+
+                    <Border Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <ListBox x:Name="NavigationListBox" SelectionChanged="ListBox_SelectionChanged">
+                            <ListBoxItem Content="Dashboard"/>
+                            <ListBoxItem Content="Stock"/>
+                            <ListBoxItem Content="Orders"/>
+                            <ListBoxItem Content="Demands"/>
+                        </ListBox>
+                    </Border>
+                </Grid>
+            </Border>
+            <Border Grid.Column="1">
+                <Frame x:Name="MainContentFrame" Margin="0,0,0,0" Padding="20"/>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
