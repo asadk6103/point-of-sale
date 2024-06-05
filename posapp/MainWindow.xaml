@@ -5,8 +5,97 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:posapp"
         mc:Ignorable="d"
+        WindowStyle="None"
+        WindowState="Maximized"
+        AllowsTransparency="True"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Border VerticalAlignment="Center" HorizontalAlignment="Center" >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-    </Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Margin="0 0 0 20">
+                <StackPanel>
+                    <TextBlock TextAlignment="Center" Text="E-Inventory" FontSize="42" FontWeight="Bold" FontFamily="Poppins" Margin="0 0 0 5" />
+                    <TextBlock TextAlignment="Center" Text="Online Inventory Management System" FontFamily="Poppins" FontSize="20" FontWeight="SemiBold" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="1" >
+                <Border Grid.Column="0" CornerRadius="10" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Row="0" Margin="0 0 0 15" >
+                        </Border>
+
+                        <Border Grid.Row="1" Margin="0 0 0 15">
+                            <StackPanel>
+                                <Label>Username / Email</Label>
+                                <TextBox Name="UserNameTextBox" FontSize="18" Padding="5" />
+                                <Label Name="UserNameErrorLabel" Visibility="Collapsed"></Label>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="2" Margin="0 0 0 15">
+                            <StackPanel>
+                                <Label>Password</Label>
+                                <PasswordBox Name="PasswordBox" FontSize="18" Padding="5" />
+                                <Label Name="PasswordErrorLabel" Visibility="Collapsed"></Label>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="3" Margin="0 0 0 15">
+                            <Button Click="Button_Click">
+                                <Button.Resources>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Content" Value="Login" />
+                                        <Setter Property="Foreground" Value="White" />
+                                        <Setter Property="FontSize" Value="18" />
+                                        <Setter Property="Padding" Value="10" />
+                                        <Setter Property="BorderBrush" Value="Transparent" />
+                                        <Setter Property="Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                                    <GradientStop Color="#005ECE" Offset="0.0" />
+                                                    <GradientStop Color="#003F8A" Offset="1.0" />
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background">
+                                                    <Setter.Value>
+                                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                                            <GradientStop Color="#003F8A" Offset="0.0" />
+                                                            <GradientStop Color="#005ECE" Offset="1.0" />
+                                                        </LinearGradientBrush>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                        </Style.Triggers>
+
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Border>
+        </Grid>
+    </Border>
 </Window>
